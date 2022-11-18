@@ -1,4 +1,30 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import "@/assets/css/normalize.css";
+import "@/assets/css/layout.scss";
+import "@/assets/css/style.scss";
 
-createApp(App).mount('#app')
+import { createApp } from "vue";
+import App from "./App.vue";
+
+import axios from "axios";
+import { router } from "./router/index.js";
+
+import ElementPlus from "element-plus";
+
+import mdiVue from "mdi-vue/v3";
+import * as mdijs from "@mdi/js";
+
+const app = createApp(App);
+
+app.config.globalProperties.$axios = axios;
+
+app.use(ElementPlus, {
+  size: "small",
+  zIndex: 3000,
+});
+
+app.use(mdiVue, {
+  icons: mdijs,
+});
+
+app.use(router);
+app.mount("#app");
