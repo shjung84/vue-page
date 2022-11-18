@@ -1,13 +1,7 @@
-<style lang="scss" scoped>
-.app-main {
-  padding-bottom: 30px;
-  margin: 0 auto;
-  max-width: 1680px;
-}
-</style>
+<style lang="scss" scoped></style>
 
 <template lang="pug">
-section.app-main app-main
+section(id="container") container
   router-view(:key="key")
 </template>
 

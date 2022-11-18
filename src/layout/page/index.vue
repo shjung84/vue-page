@@ -1,10 +1,9 @@
 <style lang="scss" scoped></style>
 
 <template lang="pug">
-.common-layout
-  el-container
-    lnb
-    app-main
+el-container
+  lnb
+  app-main
 </template>
 
 <script>
