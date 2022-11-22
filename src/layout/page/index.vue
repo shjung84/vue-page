@@ -2,18 +2,18 @@
 
 <template lang="pug">
 el-container
-  lnb
+  Aside
   app-main
 </template>
 
 <script>
 import AppMain from "./components/AppMain";
-import Lnb from "./components/Lnb";
+import Aside from "./components/Aside";
 
 export default {
   components: {
     AppMain,
-    Lnb,
+    Aside,
   },
   computed: {},
 };
