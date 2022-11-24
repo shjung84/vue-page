@@ -6,11 +6,11 @@ aside
   #lnb
     ul
       li(:class="{isCurrent: newActive === 0}" @click="handleNewMenuId(0)")
-        a(href="javascript:;")
+        router-link(to="/home")
           mdicon(name="chart-donut-variant" size="15")
           em Dashboard
       li(:class="{isCurrent: newActive === 1}" @click="handleNewMenuId(1)")
-        a(href="javascript:;")
+        router-link(to="/about")
           mdicon(name="door-open" size="15")
           em Rooms
       li( :class="{isCurrent: newActive === 2}" @click="handleNewMenuId(2)")
@@ -21,13 +21,11 @@ aside
         a(href="javascript:;" )
           mdicon(name="account-group-outline" size="15")
           em Members
-      li.logout(:class="{isCurrent: newActive === 4}" @click="handleNewMenuId(4)")
+      li.logout
         a(href="javascript:;")
           mdicon(name="power" size="15")
           em Logout
     .slide-bar
-    //- .slide-bar(:class="['bg_move', { active: newActive === 1 }]")
-
 
 </template>
 
@@ -44,7 +42,6 @@ export default {
     const newActive = ref(0);
     const handleNewMenuId = idx => {
       newActive.value = idx;
-      // console.log(idx);
       document.getElementsByClassName("slide-bar")[0].style.top = idx * 35 + "px";
     };
     return {

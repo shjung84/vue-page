@@ -11,11 +11,23 @@ export const constantRoutes = [
   // homeRouter,
   {
     path: "/",
-    name: "Home",
     component: Layout,
-    meta: {
-      title: "Home",
-    },
+    children: [
+      {
+        path: "home",
+        component: () => import("@/views/home"),
+        meta: {
+          title: "Home",
+        },
+      },
+      {
+        path: "about",
+        component: () => import("@/views/about"),
+        meta: {
+          title: "About",
+        },
+      },
+    ],
   },
   // redirect: "/home",
   // { path: "*", component: PageNotFound }
