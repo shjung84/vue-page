@@ -1,7 +1,7 @@
 <style lang="scss" scoped></style>
 
 <template lang="pug">
-el-container
+#container
   Aside
   app-main
 </template>

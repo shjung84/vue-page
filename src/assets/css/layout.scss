@@ -63,7 +63,7 @@ em {
   justify-content: center;
 }
 
-.el-container {
+#container {
   overflow: hidden;
   display: flex;
   width: 700px;
@@ -188,9 +188,13 @@ main {
   display: flex;
   flex: 1px;
   position: relative;
+  padding: 20px;
   background-color: #f8f8f6;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   -webkit-border-radius: 25px;
   -moz-border-radius: 25px;
   border-radius: 25px;
+  #container {
+    width: 100%;
+  }
 }

@@ -2,8 +2,7 @@
 
 <template lang="pug">
 main
-  #container
-    router-view(:key="key")
+  router-view(:key="key")
 </template>
 
 <script>
