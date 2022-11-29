@@ -1,8 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Sniglet:wght@400;800&display=swap");
+@import url("https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css");
+
+/* Color Setting Normal */
+html {
+  /* Default Color */
+  --color: #3b3b3b;
+  --color--opacity-7: rgba(59, 59, 59, 0.7);
+  --color--opacity-5: rgba(59, 59, 59, 0.5);
+  --color--opacity-3: rgba(59, 59, 59, 0.3);
+  --color--opacity-1: rgba(59, 59, 59, 0.1);
+
+  /* Background Color */
+  --color-bg: #fff;
+  --color-bg-level-2: #f8f8f8;
+  --color-bg-level-3: #e9e9e9;
+  --color-bg-opacity-7: rgba(255, 255, 255, 0.7);
+  --color-bg-opacity-5: rgba(255, 255, 255, 0.5);
+  --color-bg-opacity-1: rgba(255, 255, 255, 0.1);
+
+  /* Theme Color */
+  --color-theme: rgba(246, 117, 1, 1);
+  --color-theme-opacity-7: rgba(246, 117, 1, 0.7);
+  --color-theme-opacity-5: rgba(246, 117, 1, 0.5);
+  --color-theme-opacity-3: rgba(246, 117, 1, 0.3);
+  --color-theme-opacity-2: rgba(246, 117, 1, 0.2);
+  --color-theme-opacity-1: rgba(246, 117, 1, 0.1);
+
+  /* Theme Sub Color */
+  --color-theme-sub: rgba(72, 153, 146, 1);
+
+  /* Slidebar Color */
+  --color-slidebar: #f8f8f6;
+
+  /* Scrollbar Color */
+  --color-scrollbar-bg: rgba(0, 0, 0, 0.1);
+}
+
 /* Default */
 html,
 body {
   height: 100%;
   min-height: 100%;
+  color: var(--color);
+  font-family: "Lato", sans-serif;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -46,6 +86,19 @@ em {
   font-style: normal;
 }
 
+strong,
+b,
+dt {
+  font-weight: 800;
+}
+
+/* Button */
+button {
+  padding: 0;
+  cursor: pointer;
+}
+
+/* Icon */
 .mdi {
   display: inline-block;
   vertical-align: middle;
@@ -55,20 +108,25 @@ em {
 #app {
   display: flex;
   position: relative;
-  min-width: 830px;
+  min-width: 800px;
   min-height: 500px;
   height: 100%;
-  background-color: #489992;
+  background-color: var(--color-theme-sub);
+  background-color: #fff;
   align-items: center;
   justify-content: center;
 }
 
 #container {
-  overflow: hidden;
   display: flex;
+  overflow: hidden;
+  position: relative;
   width: 700px;
   height: 400px;
-  background-color: #f67501;
+  background-color: var(--color-theme);
+  background: linear-gradient(to right, var(--color-theme) 50%, var(--color-bg-level-3) 50%);
+
+  box-shadow: 0 0 10px var(--color--opacity-3);
   -webkit-border-radius: 25px;
   -moz-border-radius: 25px;
   border-radius: 25px;
@@ -98,7 +156,7 @@ aside {
       top: 0;
       width: 40px;
       height: 40px;
-      background-color: rgba(255, 255, 255, 0.5);
+      background-color: var(--color-bg-opacity-5);
       -webkit-border-radius: 50%;
       -moz-border-radius: 50%;
       border-radius: 50%;
@@ -133,7 +191,7 @@ aside {
         a {
           display: block;
           padding: 10px 10px 10px 15px;
-          color: #fff;
+          color: var(--color-bg);
           em {
             vertical-align: middle;
           }
@@ -147,7 +205,7 @@ aside {
 
         &.isCurrent {
           a {
-            color: #f67501;
+            color: var(--color-theme);
             transition: all 0.1s ease-out;
           }
         }
@@ -160,7 +218,7 @@ aside {
       left: 0;
       z-index: 1;
       height: 35px;
-      background-color: #f8f8f6;
+      background-color: var(--color-slidebar);
       border-radius: 30px 0 0 30px;
       transition: top 0.1s ease-out;
       &:before,
@@ -170,32 +228,30 @@ aside {
         right: 0;
         width: 30px;
         height: 30px;
-        background-color: #f8f8f6;
+        background-color: var(--color-slidebar);
       }
       &:before {
         bottom: 100%;
-        background: radial-gradient(circle at 0 0, transparent 30px, #f8f8f6 30px);
+        background: radial-gradient(circle at 0 0, transparent 30px, var(--color-slidebar) 30px);
       }
       &:after {
         top: 100%;
-        background: radial-gradient(circle at 0 100%, transparent 30px, #f8f8f6 30px);
+        background: radial-gradient(circle at 0 100%, transparent 30px, var(--color-slidebar) 30px);
       }
     }
   }
 }
 
-main {
-  display: flex;
-  flex: 1px;
-  position: relative;
-  width: 100%;
-  background-color: #f4f2f0;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-  -webkit-border-radius: 25px;
-  -moz-border-radius: 25px;
-  border-radius: 25px;
-  #container {
-    width: 100%;
+/* Common */
+.type-number {
+  strong {
+    font-size: 30px;
+    vertical-align: top;
+    & + span {
+      display: inline-block;
+      margin-top: 8px;
+      margin-left: 3px;
+    }
   }
 }
 
@@ -210,15 +266,61 @@ main {
       margin-bottom: 0;
     }
   }
-
   .el-col {
     .grid-content {
+      display: flex;
+      position: relative;
       min-height: 100px;
-      padding: 10px;
-      background: #fff;
+      padding: 15px;
+      border: 1px solid var(--color--opacity-1);
+      background: var(--color-bg);
       -webkit-border-radius: 15px;
       -moz-border-radius: 15px;
       border-radius: 15px;
+      .inner {
+        width: 100%;
+        // display: flex;
+        // flex: 1;
+        position: relative;
+        border: 1px solid #000;
+      }
+      .title {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 10px;
+      }
+      .type-number {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+      .btn-updown {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 20px;
+        button {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          height: 50%;
+          border: 0;
+          background-color: var(--color--opacity-1);
+          color: var(--color-theme-sub);
+          font-size: 0;
+          &.btn-up {
+            align-items: flex-start;
+            padding-top: 5px;
+            border-radius: 20px 20px 0 0;
+          }
+          &.btn-down {
+            padding-bottom: 5px;
+            align-items: flex-end;
+            border-radius: 0 0 20px 20px;
+          }
+        }
+      }
     }
   }
 }

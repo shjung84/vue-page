@@ -7,34 +7,54 @@ import PageNotFound from "@/views/PageNotFound.vue";
 // import homeRouter from "./modules/home";
 
 // export const constantRoutes = _.concat(
+//   homeRouter,
+//   {
+//     path: "/",
+//     redirect: "/home",
+//   },
+//   { path: "*", component: PageNotFound },
+// );
+
 export const constantRoutes = [
-  // homeRouter,
   {
     path: "/",
+    redirect: "/Home",
     component: Layout,
     children: [
       {
-        path: "home",
-        component: () => import("@/views/home"),
+        path: "Home",
+        component: () => import("@/views/Home"),
         meta: {
           title: "Home",
         },
       },
       {
-        path: "about",
-        component: () => import("@/views/about"),
+        path: "Rooms",
+        component: () => import("@/views/Rooms"),
         meta: {
-          title: "About",
+          title: "Rooms",
+        },
+      },
+      {
+        path: "Devices",
+        component: () => import("@/views/Devices"),
+        meta: {
+          title: "Devices",
+        },
+      },
+      {
+        path: "Members",
+        component: () => import("@/views/Members"),
+        meta: {
+          title: "Members",
         },
       },
     ],
   },
-  // redirect: "/home",
-  // { path: "*", component: PageNotFound }
 ];
 
 export const asyncRoutes = [
-  // masterRouter,
+  //   // masterRouter,
   { path: "*", component: PageNotFound },
 ];
 

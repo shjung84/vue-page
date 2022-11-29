@@ -9,6 +9,11 @@ const homeRouter = {
       component: () => import("@/views/home"),
       meta: { title: "Home" },
     },
+    {
+      path: "about",
+      component: () => import("@/views/about"),
+      meta: { title: "About" },
+    },
   ],
 };
 

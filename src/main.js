@@ -2,7 +2,6 @@ import "@/assets/css/normalize.css";
 import "@/assets/css/layout.scss";
 import "@/assets/css/style.scss";
 import "element-plus/dist/index.css";
-import "@/assets/css/element-variables.scss";
 
 // import "element-plus/lib/theme-chalk/index.css";
 
