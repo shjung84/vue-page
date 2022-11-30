@@ -6,7 +6,7 @@ main {
   width: 100%;
   background-color: #f8f8f6;
   // background-color: var(--color-bg-level-3);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  box-shadow: -10px 0 10px var(--color--opacity-3);
   -webkit-border-radius: 25px;
   -moz-border-radius: 25px;
   border-radius: 25px;

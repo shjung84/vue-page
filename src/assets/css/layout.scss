@@ -269,6 +269,7 @@ aside {
   .el-col {
     .grid-content {
       display: flex;
+      overflow: hidden;
       position: relative;
       min-height: 100px;
       padding: 15px;
@@ -277,12 +278,14 @@ aside {
       -webkit-border-radius: 15px;
       -moz-border-radius: 15px;
       border-radius: 15px;
+      &.no-pd {
+        padding: 0;
+      }
       .inner {
         width: 100%;
         // display: flex;
         // flex: 1;
         position: relative;
-        border: 1px solid #000;
       }
       .title {
         display: block;

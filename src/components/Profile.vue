@@ -18,7 +18,6 @@
       border-radius: 15px;
     }
   }
-
   .top-area {
     display: flex;
     justify-content: space-between;
@@ -69,11 +68,9 @@
       }
     }
   }
-
   .device-area {
     position: relative;
     margin-top: 15px;
-
     h2 {
       height: 15px;
       margin-bottom: 9px;
@@ -83,6 +80,11 @@
       position: absolute;
       top: 0;
       right: 0;
+    }
+    .el-scrollbar {
+      -webkit-border-radius: 15px;
+      -moz-border-radius: 15px;
+      border-radius: 15px;
     }
     .item-list {
       display: flex;
@@ -145,37 +147,38 @@
     .device-area
       h2 {{ msg }}
       a(href="javascript:;" class="btn-more") #[mdicon(name="dots-horizontal" size="15")]
-      .item-list
-        .item
-          .icon #[mdicon(name="ceiling-light" size="20")]
-          dl
-            dt Lamp
-            dd 70%
-          el-button(circle) #[mdicon(name="power-standby" size="13")]
-        .item
-          .icon #[mdicon(name="television-classic" size="20")]
-          dl
-            dt Smart TV
-            dd On
-          el-button(class="is-active" circle) #[mdicon(name="power-standby" size="13")]
-        .item
-          .icon #[mdicon(name="door-open" size="20")]
-          dl
-            dt Door
-            dd Look
-          el-button(circle) #[mdicon(name="power-standby" size="13")]
-        .item
-          .icon #[mdicon(name="air-filter" size="20")]
-          dl
-            dt AC
-            dd Off
-          el-button(circle) #[mdicon(name="power-standby" size="13")]
-        .item
-          .icon #[mdicon(name="air-purifier" size="20")]
-          dl
-            dt AC
-            dd Off
-          el-button(circle) #[mdicon(name="power-standby" size="13")]
+      el-scrollbar(height="155px")
+        .item-list
+          .item
+            .icon #[mdicon(name="ceiling-light" size="20")]
+            dl
+              dt Lamp
+              dd 70%
+            el-button(circle) #[mdicon(name="power-standby" size="13")]
+          .item
+            .icon #[mdicon(name="television-classic" size="20")]
+            dl
+              dt Smart TV
+              dd On
+            el-button(class="is-active" circle) #[mdicon(name="power-standby" size="13")]
+          .item
+            .icon #[mdicon(name="door-open" size="20")]
+            dl
+              dt Door
+              dd Look
+            el-button(circle) #[mdicon(name="power-standby" size="13")]
+          .item
+            .icon #[mdicon(name="air-filter" size="20")]
+            dl
+              dt AC
+              dd Off
+            el-button(circle) #[mdicon(name="power-standby" size="13")]
+          .item
+            .icon #[mdicon(name="air-purifier" size="20")]
+            dl
+              dt AC
+              dd Off
+            el-button(circle) #[mdicon(name="power-standby" size="13")]
 </template>
 
 <script>
