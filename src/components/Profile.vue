@@ -61,7 +61,7 @@
     dl {
       dd {
         margin-top: 5px;
-        &.type-weather {
+        &.type--weather {
           font-size: 9px;
           letter-spacing: 1px;
         }
@@ -86,12 +86,12 @@
       -moz-border-radius: 15px;
       border-radius: 15px;
     }
-    .item-list {
+    .c-card {
       display: flex;
       flex-wrap: wrap;
       overflow: hidden;
       gap: 14px;
-      .item {
+      &__item {
         display: flex;
         align-items: flex-end;
         position: relative;
@@ -141,39 +141,39 @@
     .temperature
       dl
         dt Outdoor Temperature
-        dd.type-number #[strong 27] #[span ℃]
-        dd.type-weather Cloudy
+        dd.type--number #[strong 27] #[span ℃]
+        dd.type--weather Cloudy
       a(href="javascript:;") #[mdicon(name="dots-horizontal" size="15")]
     .device-area
       h2 {{ msg }}
       a(href="javascript:;" class="btn-more") #[mdicon(name="dots-horizontal" size="15")]
       el-scrollbar(height="155px")
-        .item-list
-          .item
+        .c-card
+          .c-card__item
             .icon #[mdicon(name="ceiling-light" size="20")]
             dl
               dt Lamp
               dd 70%
             el-button(circle) #[mdicon(name="power-standby" size="13")]
-          .item
+          .c-card__item
             .icon #[mdicon(name="television-classic" size="20")]
             dl
               dt Smart TV
               dd On
             el-button(class="is-active" circle) #[mdicon(name="power-standby" size="13")]
-          .item
+          .c-card__item
             .icon #[mdicon(name="door-open" size="20")]
             dl
               dt Door
               dd Look
             el-button(circle) #[mdicon(name="power-standby" size="13")]
-          .item
+          .c-card__item
             .icon #[mdicon(name="air-filter" size="20")]
             dl
               dt AC
               dd Off
             el-button(circle) #[mdicon(name="power-standby" size="13")]
-          .item
+          .c-card__item
             .icon #[mdicon(name="air-purifier" size="20")]
             dl
               dt AC
