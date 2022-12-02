@@ -76,9 +76,64 @@
     }
   }
 }
+.l-member {
+  &__list {
+  }
+  &__item {
+    padding: 5px 0;
+
+    border-bottom: 1px solid var(--color--opacity-1);
+    &:first-child {
+      padding-top: 0;
+    }
+    &:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    min-height: 25px;
+    padding-left: 35px;
+  }
+  &__photo {
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    width: 25px;
+    height: 25px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color--opacity-1);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+  }
+  &__name {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  &__date {
+    display: block;
+    font-size: 10px;
+  }
+}
 </style>
 
 <style lang="scss">
+.el-scrollbar.pst--scroll {
+  overflow: visible;
+  > .el-scrollbar__bar.is-vertical {
+    right: -10px;
+  }
+}
+
 .vc-container {
   border: 0;
   .vc-pane {
@@ -109,47 +164,64 @@
         width: 20px;
         height: 20px;
       }
+      .vc-weekday:nth-child(6),
       .weekday-position-6 {
         color: #55a7c8;
       }
+      .vc-weekday:nth-child(7),
       .weekday-position-7 {
         color: #fe0477;
       }
-
-      .weekday-position-1 {
-        .vc-highlight-base-middle,
-        .vc-highlight-base-end {
-          left: -3px;
-          border: 1px solid #000;
-        }
+      .vc-weekday:nth-child(6),
+      .vc-weekday:nth-child(7) {
+        opacity: 0.6;
       }
+      .weekday-position-1,
       .weekday-position-7 {
         .vc-highlights {
           overflow: visible;
         }
-        .vc-day-box-right-center,
-        .vc-day-box-center-center {
-          display: block;
+      }
+      .weekday-position-1 {
+        .vc-day-box {
+          &-left-center,
+          &-center-center {
+            display: block;
+          }
         }
-        .vc-highlight-base-start {
-          margin-left: 10px;
+        .vc-highlight-base {
+          &-end {
+            margin-left: -10px;
+          }
+          &-middle {
+            margin-left: -3px;
+          }
+          &-middle,
+          &-end {
+            display: block;
+            width: 25px !important;
+          }
         }
-
-        .vc-highlight-base-start,
-        .vc-highlight-base-middle {
-          display: block;
-          width: 25px !important;
-
-          /* &:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 100%;
-
-            width: 10px;
-            background-color: #c00;
-          } */
+      }
+      .weekday-position-7 {
+        .vc-day-box {
+          &-right-center,
+          &-center-center {
+            display: block;
+          }
+        }
+        .vc-highlight-base {
+          &-start {
+            margin-left: 10px;
+          }
+          &-middle {
+            margin-left: 0;
+          }
+          &-start,
+          &-middle {
+            display: block;
+            width: 25px !important;
+          }
         }
       }
     }
@@ -163,24 +235,58 @@
       }
     }
   }
-}
-.vc-day.is-not-in-month * {
-  opacity: 0.2 !important;
-  pointer-events: inherit;
+  .vc-day.is-not-in-month * {
+    opacity: 0.2 !important;
+    pointer-events: inherit;
+  }
 }
 </style>
 
 <template lang="pug">
 .dashboard
-  el-scrollbar(height="360px")
+  el-scrollbar(class="pst--scroll" height="360px")
     .c-card
       .c-card__item.no-pd
         .c-card__inner
           .calendar
-            v-date-picker(v-model="date" :first-day-of-week="2" locale="en" is-expanded is-range color="orange" )
+            v-date-picker(v-model="date" :first-day-of-week="2" locale="en" is-expanded is-range color="pink" )
       .c-card__item
         .c-card__inner
-          .calendar
+          .l-member
+            el-scrollbar(class="pst--scroll" height="138px")
+              ul.l-member__list
+                li.l-member__item
+                  .l-member__inner
+                    p.l-member__photo #[mdicon(name="account" size="15")]
+                    strong.l-member__name Jone Doe
+                    span.l-member__date 2022.12.02
+                li.l-member__item
+                  .l-member__inner
+                    p.l-member__photo #[mdicon(name="account" size="15")]
+                    strong.l-member__name Jone Doe
+                    span.l-member__date 2022.12.02
+                li.l-member__item
+                  .l-member__inner
+                    p.l-member__photo #[mdicon(name="account" size="15")]
+                    strong.l-member__name JoneJone DoeDoe
+                    span.l-member__date 2022.12.02
+                li.l-member__item
+                  .l-member__inner
+                    p.l-member__photo #[mdicon(name="account" size="15")]
+                    strong.l-member__name JoneJone DoeDoe
+                    span.l-member__date 2022.12.02
+                li.l-member__item
+                  .l-member__inner
+                    p.l-member__photo #[mdicon(name="account" size="15")]
+                    strong.l-member__name JoneJone DoeDoe
+                    span.l-member__date 2022.12.02
+                li.l-member__item
+                  .l-member__inner
+                    p.l-member__photo #[mdicon(name="account" size="15")]
+                    strong.l-member__name JoneJone DoeDoe
+                    span.l-member__date 2022.12.02
+
+
     .c-card
       .c-card__item
         .c-card__inner

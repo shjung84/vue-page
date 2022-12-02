@@ -1,5 +1,5 @@
 <style lang="scss" scoped>
-.profile {
+.c-quick {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -7,8 +7,7 @@
   width: 200px;
   height: 100%;
   padding: 17px 20px;
-  .inner {
-    overflow: hidden;
+  &__inner {
     position: relative;
     height: 100%;
     .sec {
@@ -18,7 +17,7 @@
       border-radius: 15px;
     }
   }
-  .top-area {
+  &__top {
     display: flex;
     justify-content: space-between;
     a {
@@ -34,7 +33,8 @@
       color: var(--color--opacity-5);
     }
   }
-  .temperature {
+  &__temperature {
+    overflow: hidden;
     position: relative;
     height: 130px;
     margin-top: 10px;
@@ -49,6 +49,17 @@
 
     &:before {
       content: "";
+      position: absolute;
+      top: 100%;
+      left: 100%;
+      width: 120px;
+      height: 120px;
+      margin: -75px 0 0 -75px;
+      border: 20px solid var(--color-bg-opacity-1);
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      box-sizing: border-box;
     }
 
     a {
@@ -59,6 +70,25 @@
       color: #fff;
     }
     dl {
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        width: 90px;
+        height: 90px;
+        background-color: var(--color-bg-opacity-1);
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        border-radius: 20px;
+      }
+      &:before {
+        bottom: 80%;
+        left: 70%;
+      }
+      &:after {
+        top: 80%;
+        right: 70%;
+      }
       dd {
         margin-top: 5px;
         &.type--weather {
@@ -68,7 +98,7 @@
       }
     }
   }
-  .device-area {
+  .c-quick__device {
     position: relative;
     margin-top: 15px;
     h2 {
@@ -130,24 +160,36 @@
   }
 }
 </style>
+<style lang="scss">
+.el-scrollbar.pst--scroll {
+  overflow: visible;
+  > .el-scrollbar__bar.is-vertical {
+    right: -10px;
+  }
+}
+.el-badge__content {
+  font-size: 11px;
+}
+</style>
 
 <template lang="pug">
-.profile
-  .inner
-    .top-area
+.c-quick
+  .c-quick__inner
+    .c-quick__top
       a(href="javascript:;" class="btn-search" title="Search") #[mdicon(name="magnify"  size="15")]
-      a(href="javascript:;" class="btn-notice" title="notice") #[mdicon(name="bell-outline" size="15")]
+      el-badge( :value="12" class="item")
+        a(href="javascript:;" class="btn-notice" title="notice") #[mdicon(name="bell-outline" size="15")]
       a(href="javascript:;" class="btn-account" title="Account") #[mdicon(name="account-settings" size="15")]
-    .temperature
+    .c-quick__temperature
       dl
         dt Outdoor Temperature
         dd.type--number #[strong 27] #[span ℃]
         dd.type--weather Cloudy
       a(href="javascript:;") #[mdicon(name="dots-horizontal" size="15")]
-    .device-area
+    .c-quick__device
       h2 {{ msg }}
       a(href="javascript:;" class="btn-more") #[mdicon(name="dots-horizontal" size="15")]
-      el-scrollbar(height="155px")
+      el-scrollbar(class="pst--scroll" height="155px")
         .c-card
           .c-card__item
             .icon #[mdicon(name="ceiling-light" size="20")]
