@@ -54,12 +54,12 @@ export default {
   components: {},
   computed: {
     key() {
-      console.log(this.$route.path);
+      console.log("AppMain :", this.$route.path);
       return this.$route.path;
     },
   },
   mounted() {
-    console.log(`AppMain.vue`);
+    console.log(`AppMain : mounted`);
   },
 };
 </script>

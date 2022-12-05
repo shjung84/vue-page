@@ -35,7 +35,7 @@ import { ref } from "vue";
 export default {
   computed: {},
   mounted() {
-    console.log(`mounted aside`);
+    console.log(`Aside : mounted`);
   },
   methods: {},
   setup() {
