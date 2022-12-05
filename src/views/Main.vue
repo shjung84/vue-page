@@ -77,8 +77,6 @@
   }
 }
 .l-member {
-  &__list {
-  }
   &__item {
     padding: 5px 0;
 
@@ -325,7 +323,7 @@
 import { DatePicker } from "v-calendar";
 
 export default {
-  name: "Home",
+  name: "Main",
   components: {
     DatePicker,
     // DatePicker: {

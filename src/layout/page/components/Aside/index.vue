@@ -6,7 +6,7 @@ aside
   #lnb
     ul
       li(:class="{isCurrent: newActive === 0}" @click="handleNewMenuId(0)")
-        router-link(to="/Home")
+        router-link(to="/Main")
           mdicon(name="chart-donut-variant" size="15")
           em Dashboard
       li(:class="{isCurrent: newActive === 1}" @click="handleNewMenuId(1)")
