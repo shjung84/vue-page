@@ -1,2 +1,2 @@
 "use strict";(self["webpackChunkvue_page"]=self["webpackChunkvue_page"]||[]).push([[335],{335:function(e,n,u){u.r(n),u.d(n,{default:function(){return i}});var r=u(252);function a(e,n,u,a,c,t){return(0,r.wg)(),(0,r.iD)("h1",null,"Devices")}var c={name:"Devices"},t=u(744);const s=(0,t.Z)(c,[["render",a]]);var i=s}}]);
-//# sourceMappingURL=335.7652f95f.js.map
+//# sourceMappingURL=335.341c3e3d.js.map
