@@ -49,6 +49,13 @@ export const constantRoutes = [
           title: "Members",
         },
       },
+      {
+        path: "*",
+        component: PageNotFound,
+        meta: {
+          title: "PageNotFound",
+        },
+      },
     ],
   },
 ];
@@ -68,7 +75,8 @@ const router = createRouter({
    * Vue Router를 통해 URL로 매핑된 vue 컴포넌트를 전환할 시에 필요한 히스토리 관리 기법을,
    * 해시형으로 쓸 수 있게 해주는 인스턴스를 생성하는 function
    */
-  history: createWebHistory(process.env.NODE_ENV === "production" ? "/vue-page/" : "/"),
+  history: createWebHistory(),
+  // history: createWebHistory(process.env.NODE_ENV === "production" ? "/vue-page/" : "./"),
   routes: constantRoutes,
 });
 
