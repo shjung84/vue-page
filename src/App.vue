@@ -20,7 +20,7 @@ export default {
     };
   },
   mounted() {
-    console.log(`App : mounted`);
+    console.log(`App : mounted - 14:24`);
   },
 };
 </script>

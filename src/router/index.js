@@ -49,13 +49,6 @@ export const constantRoutes = [
           title: "Members",
         },
       },
-      {
-        path: "*",
-        component: PageNotFound,
-        meta: {
-          title: "PageNotFound",
-        },
-      },
     ],
   },
 ];
