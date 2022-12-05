@@ -54,7 +54,7 @@ export const constantRoutes = [
 ];
 
 export const asyncRoutes = [
-  //   // masterRouter,
+  // masterRouter,
   { path: "*", component: PageNotFound },
 ];
 
