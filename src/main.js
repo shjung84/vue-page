@@ -1,6 +1,5 @@
 import "@/assets/css/normalize.css";
 import "@/assets/css/layout.scss";
-import "@/assets/css/style.scss";
 import "element-plus/dist/index.css";
 import "v-calendar/dist/style.css";
 
