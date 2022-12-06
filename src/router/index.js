@@ -28,27 +28,27 @@ export const constantRoutes = [
           title: "Main",
         },
       },
-      {
-        path: "Rooms",
-        component: () => import("@/views/Rooms"),
-        meta: {
-          title: "Rooms",
-        },
-      },
-      {
-        path: "Devices",
-        component: () => import("@/views/Devices"),
-        meta: {
-          title: "Devices",
-        },
-      },
-      {
-        path: "Members",
-        component: () => import("@/views/Members"),
-        meta: {
-          title: "Members",
-        },
-      },
+      // {
+      //   path: "Rooms",
+      //   component: () => import("@/views/Rooms"),
+      //   meta: {
+      //     title: "Rooms",
+      //   },
+      // },
+      // {
+      //   path: "Devices",
+      //   component: () => import("@/views/Devices"),
+      //   meta: {
+      //     title: "Devices",
+      //   },
+      // },
+      // {
+      //   path: "Members",
+      //   component: () => import("@/views/Members"),
+      //   meta: {
+      //     title: "Members",
+      //   },
+      // },
     ],
   },
 ];
