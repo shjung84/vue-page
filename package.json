@@ -34,7 +34,6 @@
     "deepmerge": "^4.2.2",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
-    "gh-pages": "^4.0.0",
     "sass": "^1.32.13",
     "sass-loader": "^13.2.0"
   },
